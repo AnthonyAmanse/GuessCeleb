@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2196F3"
+    tools:context="com.example.ghiea.guessceleb.MainActivity">
+
+    <TextView
+        android:text="Loading. . ."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+
+        android:id="@+id/statusText"
+        android:textColor="@android:color/white"
+        android:textSize="36sp" />
+    <TextView
+        android:text="(Please connect to the internet)"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/statusText"
+        android:layout_centerHorizontal="true"
+
+        android:id="@+id/subStatusText"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+    <TextView
+        android:text="0/0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/scoreText"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        android:padding="10dp"
+        android:background="#2196F3"
+        android:textColor="@android:color/white" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_below="@+id/scoreText"
+
+        android:layout_centerHorizontal="true"
+        android:id="@+id/celebImage"
+        android:scaleType="fitCenter"
+        android:layout_above="@+id/resultText" />
+
+    <TextView
+        android:text="Correct!"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button1"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/resultText"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        android:padding="10dp" />
+
+    <Button
+        android:text="Option 1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button2"
+        android:layout_alignLeft="@+id/button2"
+        android:layout_alignStart="@+id/button2"
+        android:id="@+id/button1"
+        android:background="@android:color/holo_green_dark"
+        android:onClick="chooseAnswer" />
+
+    <Button
+        android:text="Option 2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button2"
+        android:background="@android:color/holo_green_light"
+        android:layout_above="@+id/button3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="chooseAnswer" />
+
+    <Button
+        android:text="Option 3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button4"
+        android:layout_alignLeft="@+id/button4"
+        android:layout_alignStart="@+id/button4"
+        android:id="@+id/button3"
+        android:background="@android:color/holo_purple"
+        android:onClick="chooseAnswer" />
+
+    <Button
+        android:text="Option 4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/button4"
+        android:layout_marginBottom="100dp"
+        android:background="@android:color/holo_red_dark"
+        android:onClick="chooseAnswer" />
+
+</RelativeLayout>
