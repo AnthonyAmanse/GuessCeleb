@@ -2,6 +2,7 @@ package com.example.ghiea.guessceleb;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +11,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -26,7 +31,7 @@ import java.util.regex.Pattern;
 import static android.icu.lang.UCharacter.GraphemeClusterBreak.V;
 
 public class MainActivity extends AppCompatActivity {
-
+//ca-app-pub-7028296694914621/9103296199
     TextView scoreText;
     TextView resultText;
     ImageView celebImage;
@@ -53,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
     int totalCorrect;
     int totalAttempts;
     ImageDownloader taskImage;
+
+    private AdView mAdView;
 
     public Button getButtonView(int id) {return (Button) findViewById(id);}
     public TextView getTextView(int id) {return (TextView) findViewById(id);}
@@ -164,6 +171,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        MobileAds.initialize(getApplicationContext(), "ca-app-pub-7028296694914621~7626562999");
+        mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         scoreText = getTextView(R.id.scoreText);
         resultText = getTextView(R.id.resultText);
